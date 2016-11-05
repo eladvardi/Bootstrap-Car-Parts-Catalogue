@@ -1,9 +1,9 @@
 <?php
-require "settings.php"; 
-require "view/top.php"; 
+require "settings.php";
 require "view/view_functions.php";
 
-// welcome message for admins		
+print_top();
+
 if ($admin) {
 	echo admin_jumbotron();			
 }
@@ -18,13 +18,8 @@ if ($admin) {
 	echo purchase_box();
 }
 
-// create an array of results matching search query, or get all rows in a case of no query
-$parts = get_parts($_GET['q']); 
+echo print_results_table(get_parts($_GET['q']),$admin);
 
-// create a nice results table
-echo print_results_table($parts,$admin);
+print_bottom();
 
-
-//html for footer
-require "view/bottom.php";
 

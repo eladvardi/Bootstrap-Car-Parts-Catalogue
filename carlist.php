@@ -1,10 +1,10 @@
 <?php
-require "settings.php"; 
-require "view/top.php"; 
+require "settings.php";
 require "view/view_functions.php";
 
-$cars = get_car_list();
-echo print_cars_table($cars);
+print_top();
 
-include "view/bottom.php";
+echo print_cars_table(get_car_list());
+
+print_bottom();
 
