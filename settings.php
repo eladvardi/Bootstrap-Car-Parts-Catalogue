@@ -18,5 +18,24 @@ if ( isset($_POST['action']) && ($_POST['action']=='insert') ){
 	}	
 }
 
-check_post_purchase();	
+check_post_purchase();
+
+
+
+function get_page(){
+
+	$page = array_shift(explode('/', trim($_SERVER['PATH_INFO'],'/')));
+
+
+	if (trim($page)=='') {
+		return 'index';
+	}
+
+	$valid_pages = array('best-sales','sales','cars','admin');
+
+	if (in_array($page,$valid_pages)){
+		return $page;
+	}
+}
+
 
