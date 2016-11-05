@@ -1,2 +1,2 @@
 # Bootstrap-Car-Parts-Catalogue
-Bootstrap Simple example of a Car Parts Catalogue
+Simple example of a Car Parts Catalogue using Bootstrap
