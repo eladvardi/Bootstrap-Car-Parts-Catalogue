@@ -118,7 +118,7 @@ function get_car_list($q=''){
 	if ($query = mysqli_query($conn, "SELECT * FROM `car_models` ORDER BY `year_from` DESC ")){
 
 		while ($r = mysqli_fetch_array($query)){
-			$parts[$r['id']] = array('name'=>$r['name'],'year_from'=>$r['year_from'],'year_to'=>$r['year_to'],'img_url'=>$r['img_url'],'thumb_url'=>$r['thumb_url'],'wiki_name'=>$r['wiki_name']);
+			$parts[$r['id']] = array('name'=>$r['name'],'year_from'=>$r['year_from'],'year_to'=>$r['year_to'],'img_url'=>$r['img_url'],'thumb_url'=>$r['thumb_url'],'wiki_name'=>str_replace('.','',$r['wiki_name']));
 		}
 		return $parts;
 	}
